@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "shelters index page", type: :feature do
+RSpec.describe "Shelters Index", type: :feature do
   describe "User" do
     before :each do
       @shelter_1 = Shelter.create!(name: "The Humane Society - Denver",
@@ -8,11 +8,11 @@ RSpec.describe "shelters index page", type: :feature do
         city: "Denver",
         state: "CO",
         zip: "11111")
-        @shelter_2 = Shelter.create(name: "Denver Animal Shelter",
-          address: "7 There Blvd",
-          city: "Denver",
-          state: "CO",
-          zip: "22222")
+      @shelter_2 = Shelter.create!(name: "Denver Animal Shelter",
+        address: "7 There Blvd",
+        city: "Denver",
+        state: "CO",
+        zip: "22222")
     end
 
     it "can see all shelter names" do

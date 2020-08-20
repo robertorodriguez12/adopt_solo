@@ -342,12 +342,79 @@
         "lines": [
           1,
           1,
+          1,
           null
         ]
       },
       "/Users/priyapower/Turing/2module/projects/adopt_solo/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/priyapower/Turing/2module/projects/adopt_solo/spec/features/shelters/new_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/priyapower/Turing/2module/projects/adopt_solo/spec/features/shelters/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -375,6 +442,11 @@
           1,
           1,
           null,
+          null,
+          1,
+          2,
+          null,
+          null,
           null
         ]
       },
@@ -385,6 +457,6 @@
         ]
       }
     },
-    "timestamp": 1597931087
+    "timestamp": 1597945023
   }
 }
