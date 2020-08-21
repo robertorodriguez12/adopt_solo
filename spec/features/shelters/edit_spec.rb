@@ -45,8 +45,6 @@ RSpec.describe "Shelters New" do
         expect(page).to have_content("17 There Blvd")
         expect(page).to have_content("33333")
       end
-
-      it "can redirect to updated shelter show page"
     end
   end
 end
