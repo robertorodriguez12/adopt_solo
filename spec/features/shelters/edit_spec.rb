@@ -8,11 +8,6 @@ RSpec.describe "Shelters New" do
         city: "Denver",
         state: "CO",
         zip: "11111")
-      @shelter_2 = Shelter.create!(name: "Denver Animal Shelter",
-        address: "7 There Blvd",
-        city: "Denver",
-        state: "CO",
-        zip: "22222")
     end
 
     describe "When I visit a shelter show page then click the link update shelter" do
@@ -32,7 +27,25 @@ RSpec.describe "Shelters New" do
         expect(find_field(:zip).value).to eq "11111"
       end
 
-      it "can update shelter information after submit"
+      it "can update shelter information after submit" do
+        visit "/shelters/#{@shelter_1.id}"
+        expect(page).to have_link('Update Shelter')
+        click_link 'Update Shelter'
+        expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
+
+        expect(find_field(:address).value).to eq "1 Place St"
+        expect(find_field(:zip).value).to eq "11111"
+
+        fill_in :address, with: "17 There Blvd"
+        fill_in :zip, with: "33333"
+
+        click_on "Submit your Edits"
+        expect(current_path).to eq("/shelters/#{@shelter_1.id}")
+
+        expect(page).to have_content("17 There Blvd")
+        expect(page).to have_content("33333")
+      end
+
       it "can redirect to updated shelter show page"
     end
   end
