@@ -37,7 +37,6 @@ RSpec.describe "Shelters New" do
         click_link 'Delete Shelter'
 
         expect(current_path).to eq("/shelters")
-        save_and_open_page
 
         expect(page).to_not have_content(@shelter_1.name)
 

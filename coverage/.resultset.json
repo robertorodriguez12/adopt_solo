@@ -348,13 +348,73 @@
           1,
           1,
           1,
-          null,
+          1,
           null
         ]
       },
       "/Users/priyapower/Turing/2module/projects/adopt_solo/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/priyapower/Turing/2module/projects/adopt_solo/spec/features/shelters/delete_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -511,10 +571,30 @@
           null
         ]
       },
-      "/Users/priyapower/Turing/2module/projects/adopt_solo/app/models/shelter.rb": {
+      "/Users/priyapower/Turing/2module/projects/adopt_solo/spec/models/pet_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/priyapower/Turing/2module/projects/adopt_solo/app/models/pet.rb": {
         "lines": [
           1,
           1,
+          1,
+          null,
           1,
           1,
           1,
@@ -525,6 +605,54 @@
       "/Users/priyapower/Turing/2module/projects/adopt_solo/app/models/application_record.rb": {
         "lines": [
           1,
+          1,
+          null
+        ]
+      },
+      "/Users/priyapower/Turing/2module/projects/adopt_solo/spec/models/shelter_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/priyapower/Turing/2module/projects/adopt_solo/app/models/shelter.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/priyapower/Turing/2module/projects/adopt_solo/app/controllers/pets_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/priyapower/Turing/2module/projects/adopt_solo/app/controllers/application_controller.rb": {
+        "lines": [
           1,
           null
         ]
@@ -571,14 +699,8 @@
           null,
           null
         ]
-      },
-      "/Users/priyapower/Turing/2module/projects/adopt_solo/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1598106646
+    "timestamp": 1598116925
   }
 }
