@@ -1,0 +1,7 @@
+<h1>Meet <%= @pet.name %></h1>
+<%= image_tag(@pet.image) %>
+<p>LOCATED AT: <%= @pet.shelter.name %></p>
+<p>Approximate age: <%= @pet.approximate_age %></p>
+<p>Gender: <%= @pet.sex %></p>
+<p>Description: <%= @pet.description %></p>
+<p>Status: <%= @pet.status %></p>
