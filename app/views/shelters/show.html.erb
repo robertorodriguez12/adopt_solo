@@ -1,6 +1,7 @@
-<h1><%= @shelters.name %></h1>
-<p>Address: <%= @shelters.address %></p>
-<p>City: <%= @shelters.city %></p>
-<p>State: <%= @shelters.state %></p>
-<p>Zip: <%= @shelters.zip %></p>
-<h4><%= link_to 'Update Shelter', "/shelters/#{@shelters.id}/edit" %></h4>
+<h1><%= @shelter.name %></h1>
+<p>Address: <%= @shelter.address %></p>
+<p>City: <%= @shelter.city %></p>
+<p>State: <%= @shelter.state %></p>
+<p>Zip: <%= @shelter.zip %></p>
+<h4><%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit" %></h4>
+<h4><%= link_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: "delete" %></h4>
