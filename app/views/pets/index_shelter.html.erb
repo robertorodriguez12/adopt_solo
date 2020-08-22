@@ -1,0 +1,7 @@
+<h1>Pets located at the <%= @shelter.name %></h1>
+<% @pets.each do |pet| %>
+  <h2>Name: <%= pet.name %></h2>
+  <%= image_tag(pet.image) %>
+  <p>Approximate age: <%= pet.approximate_age %></p>
+  <p>Gender: <%= pet.sex %></p>
+<% end %>
