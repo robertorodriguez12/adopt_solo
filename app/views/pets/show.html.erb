@@ -1,4 +1,7 @@
-<h1>Meet <%= link_to "#{@pet.name}", "/pets/#{@pet.id}", method: :get %></h1>
+<h1>Adopt Don't Shop</h1></b>
+<h2>Meet <%= link_to "#{@pet.name}", "/pets/#{@pet.id}", method: :get %></h2></b>
+<%= link_to "All Pets", "/pets", method: :get %>
+<%= link_to "All Shelters", "/shelters", method: :get %>
 <%= image_tag(@pet.image) %>
 <p>LOCATED AT: <%= link_to "#{@pet.shelter.name}", "/shelters/#{@pet.shelter_id}", method: :get %></p>
 <p>Approximate age: <%= @pet.approximate_age %></p>

@@ -79,5 +79,19 @@ RSpec.describe "Pets Show page", type: :feature do
       expect(page).to have_content("#{@pet_1.name}")
       expect(page).to_not have_content("#{@pet_2.name}")
     end
+
+    it "can see links for ALL PETS at top of every html page" do
+      visit "/pets/#{@pet_1.id}"
+      expect(page).to have_link("All Pets")
+      click_link "All Pets"
+      expect(current_path).to eq("/pets")
+    end
+
+    it "can see links for ALL SHELTERS at top of every html page" do
+      visit "/pets/#{@pet_1.id}"
+      expect(page).to have_link("All Shelters")
+      click_link "All Shelters"
+      expect(current_path).to eq("/shelters")
+    end
   end
 end
