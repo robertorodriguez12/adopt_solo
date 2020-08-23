@@ -10,3 +10,4 @@
   <p>Status: Pending Adoption </p>
 <% end %></b>
 <h4><%= link_to 'Update Pet', "/pets/#{@pet.id}/edit" %></h4>
+<h4><%= link_to 'Delete Pet', "/pets/#{@pet.id}", method: :delete %></h4>

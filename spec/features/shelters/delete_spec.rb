@@ -1,13 +1,3 @@
-# User Story 6, Shelter Delete
-#
-# As a visitor
-# When I visit a shelter show page
-# Then I see a link to delete the shelter
-# When I click the link "Delete Shelter"
-# Then a 'DELETE' request is sent to '/shelters/:id',
-# the shelter is deleted,
-# and I am redirected to the shelter index page where I no longer see this shelter
-
 require 'rails_helper'
 
 RSpec.describe "Shelters New" do
@@ -43,14 +33,5 @@ RSpec.describe "Shelters New" do
         expect(page).to have_content(@shelter_2.name)
       end
     end
-
-    #   it "can delete a shelter id and redirect to index"
-    #     visit "/shelters/#{@shelter_1.id}"
-    #     save_and_open_page
-    #
-    #
-    #     expect(page).to have_link('Delete Shelter')
-    #
-    # end
   end
 end
