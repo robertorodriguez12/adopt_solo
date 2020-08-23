@@ -36,7 +36,20 @@ class PetsController < ApplicationController
   def destroy
     @pet = Pet.find(params[:id])
     @pet.destroy
-    redirect_to "/pets"
+    # IF STATEMENT
+    #  if coming from index.html.erb
+        redirect_to "/pets"
+    # else
+        # redirect_to "/shelters/#{@shelter.id}/pets"
+    # end
+
+  end
+
+  def destroy_from_shelter
+    @pet = Pet.find(params[:id])
+    @shelter = Shelter.find(@pet.shelter_id)
+    @pet.destroy
+    redirect_to "/shelters/#{@shelter.id}/pets"
   end
 
   private
