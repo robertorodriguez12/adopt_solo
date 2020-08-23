@@ -63,5 +63,31 @@ RSpec.describe "Pets Index", type: :feature do
       first(:link, 'Edit Pet').click
       expect(current_path).to eq("/pets/#{@pet_1.id}/edit")
     end
+
+    it "text" do
+
+    end
+
+    it "can see links to delete unique_shelter; style note: link 'next to' the shelter" do
+      visit "/pets"
+        # or a shelter pets index page
+
+      expect(page).to have_content(@pet_1.name)
+      expect(page).to have_content(@pet_2.name)
+      expect(page).to have_content(@pet_3.name)
+
+      expect(page).to have_link('Delete Pet')
+
+      first(:link, 'Delete Pet').click
+      expect(current_path).to eq("/pets")
+      save_and_open_page
+
+      expect(page).to_not have_content(@pet_1.name)
+      expect(page).to have_content(@pet_2.name)
+      expect(page).to have_content(@pet_3.name)
+    end
+
+
+
   end
 end

@@ -62,7 +62,6 @@ RSpec.describe "Pets Index from Shelter", type: :feature do
 
     it "can see links to edit unique_pet from index; style note: link 'next to' the pet" do
       visit "/shelters/#{@shelter_1.id}/pets"
-      save_and_open_page
 
       expect(page).to have_content(@pet_1.name)
       expect(page).to have_content(@pet_2.name)
@@ -71,7 +70,6 @@ RSpec.describe "Pets Index from Shelter", type: :feature do
       expect(page).to have_link('Edit Pet')
 
       first(:link, 'Edit Pet').click
-      save_and_open_page
       expect(current_path).to eq("/pets/#{@pet_1.id}/edit")
     end
   end
