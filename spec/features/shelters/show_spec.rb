@@ -60,6 +60,13 @@ RSpec.describe "Shelters Show", type: :feature do
         click_link "All Shelters"
         expect(current_path).to eq("/shelters")
       end
+
+      it "can see links to take me to that unique_shelters pets page" do
+        visit "/shelters/#{@shelter_1.id}"
+        expect(page).to have_link("All Pets at Shelter")
+        click_link "All Pets at Shelter"
+        expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
+      end
     end
   end
 end
