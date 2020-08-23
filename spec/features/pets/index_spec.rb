@@ -84,5 +84,18 @@ RSpec.describe "Pets Index", type: :feature do
       expect(page).to have_content(@pet_2.name)
       expect(page).to have_content(@pet_3.name)
     end
+
+    it "can link to unique shelter page any time you see shelter name" do
+      visit "/pets"
+      expect(page).to have_content(@shelter_2.name)
+
+      expect(page).to have_link("#{@shelter_2.name}")
+
+      click_link "#{@shelter_2.name}"
+      expect(current_path).to eq("/shelters/#{@shelter_2.id}")
+
+      expect(page).to have_content("#{@shelter_2.name}")
+      expect(page).to_not have_content("#{@shelter_1.name}")
+    end
   end
 end

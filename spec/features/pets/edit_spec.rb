@@ -88,8 +88,20 @@ RSpec.describe "Pets Update Page", type: :feature do
       expect(current_path).to eq("/pets/#{@pet_3.id}")
 
       expect(page).to have_content("0.7")
-
     end
 
+    it "can link to unique shelter page any time you see shelter name" do
+      visit "/pets/#{@pet_2.id}/edit"
+
+      expect(page).to have_content(@shelter_1.name)
+
+      expect(page).to have_link("#{@shelter_1.name}")
+
+      click_link "#{@shelter_1.name}"
+      expect(current_path).to eq("/shelters/#{@shelter_1.id}")
+
+      expect(page).to have_content("#{@shelter_1.name}")
+      expect(page).to_not have_content("#{@shelter_2.name}")
+    end
   end
 end

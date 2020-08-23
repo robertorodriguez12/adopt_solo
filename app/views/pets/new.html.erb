@@ -1,4 +1,4 @@
-<h1> Add a new Pet to shelter: <%= @shelter.name %></h1>
+<h1> Add a new Pet to shelter: <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}", method: :get %></h1>
 <%= form_tag("/shelters/#{@shelter_id}/pets", method: :post) do %>
   binding.pry
   <p>Enter a new pet:</p>
