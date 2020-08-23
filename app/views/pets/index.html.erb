@@ -1,8 +1,10 @@
-<h1>Pets in the Denver Area</h1>
+<h1>Adopt Don't Shop</h1></b>
+<h2>Pets in the Denver Area</h2></b>
 <% @pets.each do |pet| %>
   <h2>Adoptable Pet: <%= pet.name %></h2>
   <%= image_tag(pet.image) %>
   <p>Approximate age: <%= pet.approximate_age %></p>
   <p>Gender: <%= pet.sex %></p>
   <p>Shelter Location: <%= pet.shelter.name %></p>
+  <%= link_to "Edit Pet", "/pets/#{pet.id}/edit", method: :get %>
 <% end %>

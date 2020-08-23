@@ -35,7 +35,6 @@ RSpec.describe "Shelters New" do
 
       it "can see links to delete unique_shelter; style note: link 'next to' the shelter" do
         visit "/shelters"
-        save_and_open_page
 
         expect(page).to have_content(@shelter_1.name)
         expect(page).to have_content(@shelter_2.name)
@@ -43,7 +42,6 @@ RSpec.describe "Shelters New" do
         expect(page).to have_link('Delete Shelter')
 
         first(:link, 'Delete Shelter').click
-        save_and_open_page
         expect(current_path).to eq("/shelters")
 
         expect(page).to_not have_content(@shelter_1.name)
