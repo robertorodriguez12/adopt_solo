@@ -29,7 +29,6 @@ RSpec.describe "Shelters Index", type: :feature do
 
       expect(page).to have_link('Edit Shelter')
 
-      # click_link 'Edit Shelter'
       first(:link, 'Edit Shelter').click
       expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
     end
