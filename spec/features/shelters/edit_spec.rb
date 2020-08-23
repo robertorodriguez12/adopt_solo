@@ -8,6 +8,11 @@ RSpec.describe "Shelters New" do
         city: "Denver",
         state: "CO",
         zip: "11111")
+      @shelter_2 = Shelter.create!(name: "Denver Animal Shelter",
+        address: "7 There Blvd",
+        city: "Denver",
+        state: "CO",
+        zip: "22222")
     end
 
     describe "When I visit a shelter show page then click the link update shelter" do
@@ -44,6 +49,19 @@ RSpec.describe "Shelters New" do
 
         expect(page).to have_content("17 There Blvd")
         expect(page).to have_content("33333")
+      end
+
+      it "can link to unique shelter page any time you see shelter name" do
+        visit "/shelters/#{@shelter_2.id}/edit"
+        expect(page).to have_content(@shelter_2.name)
+
+        expect(page).to have_link("#{@shelter_2.name}")
+
+        click_link "#{@shelter_2.name}"
+        expect(current_path).to eq("/shelters/#{@shelter_2.id}")
+
+        expect(page).to have_content("#{@shelter_2.name}")
+        expect(page).to_not have_content("#{@shelter_1.name}")
       end
     end
   end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Shelters New" do
+RSpec.describe "Shelters Delete Behavior" do
   describe "As a visitor" do
     before :each do
       @shelter_1 = Shelter.create!(name: "The Humane Society - Denver",

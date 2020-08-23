@@ -14,7 +14,7 @@ RSpec.describe "Shelters Show", type: :feature do
         state: "CO",
         zip: "22222")
     end
-    
+
     describe "When I visit a single shelters page" do
       it "can see a unique shelters information by id" do
         visit "/shelters/#{@shelter_1.id}"
@@ -32,6 +32,19 @@ RSpec.describe "Shelters Show", type: :feature do
         expect(page).to have_content(@shelter_2.city)
         expect(page).to have_content(@shelter_2.state)
         expect(page).to have_content(@shelter_2.zip)
+      end
+
+      it "can link to unique shelter page any time you see shelter name" do
+        visit "/shelters/#{@shelter_2.id}"
+        expect(page).to have_content(@shelter_2.name)
+
+        expect(page).to have_link("#{@shelter_2.name}")
+
+        click_link "#{@shelter_2.name}"
+        expect(current_path).to eq("/shelters/#{@shelter_2.id}")
+
+        expect(page).to have_content("#{@shelter_2.name}")
+        expect(page).to_not have_content("#{@shelter_1.name}")
       end
     end
   end

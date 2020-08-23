@@ -1,5 +1,5 @@
 <%= form_tag "/shelters/#{@shelter.id}", method: 'patch' do %>
-  <p>Edit information about the shelter:</p>
+  <p>Edit information about the shelter: <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}", method: :get %></p>
   <%= label_tag :name %>
   <%= text_field_tag :name, @shelter.name %>
   <%= label_tag :addres %>
