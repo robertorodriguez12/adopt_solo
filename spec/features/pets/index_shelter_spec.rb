@@ -22,17 +22,23 @@ RSpec.describe "Pets Index from Shelter", type: :feature do
         name: "Tinkerbell",
         approximate_age: 3,
         sex: "Female",
-        shelter_id: "#{@shelter_1.id}")
+        shelter_id: "#{@shelter_1.id}",
+        description: "Adorable chihuahua mix with lots of love to give",
+        status: true)
       @pet_2 = Pet.create!(image: image_2,
         name: "George",
         approximate_age: 5,
         sex: "Male",
-        shelter_id: "#{@shelter_1.id}")
+        shelter_id: "#{@shelter_1.id}",
+        description: "This pitty mix will melt your heart with his sweet temperament",
+        status: false)
       @pet_3 = Pet.create!(image: image_3,
         name: "Ruby",
         approximate_age: 0,
         sex: "Female",
-        shelter_id: "#{@shelter_2.id}")
+        shelter_id: "#{@shelter_2.id}",
+        description: "This flat-coated retriever mix is your best friend on walks and is perfect for families with kids",
+        status: true)
     end
 
     it "can see all pets at unique shelter" do
@@ -52,6 +58,21 @@ RSpec.describe "Pets Index from Shelter", type: :feature do
 
       expect(page).to have_no_css("img[src*='#{@pet_3.image}']")
       expect(page).to have_no_content(@pet_3.name)
+    end
+
+    it "can see links to edit unique_pet from index; style note: link 'next to' the pet" do
+      visit "/shelters/#{@shelter_1.id}/pets"
+      save_and_open_page
+
+      expect(page).to have_content(@pet_1.name)
+      expect(page).to have_content(@pet_2.name)
+      expect(page).to_not have_content(@pet_3.name)
+
+      expect(page).to have_link('Edit Pet')
+
+      first(:link, 'Edit Pet').click
+      save_and_open_page
+      expect(current_path).to eq("/pets/#{@pet_1.id}/edit")
     end
   end
 end

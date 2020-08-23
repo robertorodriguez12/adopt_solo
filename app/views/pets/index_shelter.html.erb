@@ -1,8 +1,10 @@
-<h1>Pets located at the <%= @shelter.name %></h1>
+<h1>Adopt Don't Shop</h1></b>
+<h2>Pets located at the <%= @shelter.name %></h2></b>
 <% @pets.each do |pet| %>
-  <h2>Name: <%= pet.name %></h2>
+  <h2>Adoptable Pet: <%= pet.name %></h2>
   <%= image_tag(pet.image) %>
   <p>Approximate age: <%= pet.approximate_age %></p>
   <p>Gender: <%= pet.sex %></p>
+  <%= link_to "Edit Pet", "/pets/#{pet.id}/edit", method: :get %>
 <% end %>
 <h4><%= link_to "Add New Pet", "/shelters/#{@shelter.id}/pets/new" %></h4>

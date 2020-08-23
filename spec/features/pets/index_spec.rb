@@ -53,7 +53,6 @@ RSpec.describe "Pets Index", type: :feature do
 
     it "can see links to edit unique_pet from index; style note: link 'next to' the pet" do
       visit "/pets"
-        # or a shelter pets index page
 
       expect(page).to have_content(@pet_1.name)
       expect(page).to have_content(@pet_2.name)
