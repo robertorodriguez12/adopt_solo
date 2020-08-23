@@ -1,0 +1,17 @@
+<h1> Add a new Pet to shelter: <%= @shelter.name %></h1>
+<%= form_tag("/shelters/#{@shelter_id}/pets", method: :post) do %>
+  binding.pry
+  <p>Enter a new pet:</p>
+  <%= label_tag "Image Url: " %>
+  <%= text_field_tag :image %>
+  <%= label_tag "Name of Pet: " %>
+  <%= text_field_tag :name %>
+  <%= label_tag "Approximate age: " %>
+  <%= text_field_tag :approximate_age %>
+  <%= label_tag "Gender: " %>
+  <%= text_field_tag :sex %>
+  <%= label_tag "Description: " %>
+  <%= text_field_tag :description %>
+
+  <%= submit_tag 'Add this Pet', class: :button %>
+<% end %>

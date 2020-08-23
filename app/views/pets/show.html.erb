@@ -4,4 +4,8 @@
 <p>Approximate age: <%= @pet.approximate_age %></p>
 <p>Gender: <%= @pet.sex %></p>
 <p>Description: <%= @pet.description %></p>
-<p>Status: <%= @pet.status %></p>
+<% if @pet.status %>
+  <p>Status: Adoptable </p>
+<% else %>
+  <p>Status: Pending Adoption </p>
+<% end %>

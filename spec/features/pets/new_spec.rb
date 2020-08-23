@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Pets Show page", type: :feature do
+RSpec.describe "Pets New page", type: :feature do
   describe "As a visitor" do
     before :each do
       @shelter_1 = Shelter.create!(name: "The Humane Society - Denver",
@@ -41,16 +41,31 @@ RSpec.describe "Pets Show page", type: :feature do
         status: true)
     end
 
-    it "can see a unique pet with two new attributes: description and status" do
-      visit "/pets/#{@pet_1.id}"
+    it "can add a new pet" do
+      visit "/shelters/#{@shelter_2.id}/pets"
 
-      expect(page).to have_css("img[src*='#{@pet_1.image}']")
-      expect(page).to have_content(@pet_1.name)
-      expect(page).to have_content(@pet_1.approximate_age)
-      expect(page).to have_content(@pet_1.sex)
-      expect(page).to have_content(@pet_1.description)
-      expect(page).to have_content(@pet_1.status)
-      expect(page).to have_content(@shelter_1.name)
+      click_link("Add New Pet")
+      expect(current_path).to eq("/shelters/#{@shelter_2.id}/pets/new")
+
+      image_4 = "https://www.iamcasper.com/wp-content/uploads/2018/03/Torbie-Ragdoll-1030x790.png"
+
+      expect(page).to have_content(@shelter_2.name)
+
+      fill_in :image, with: image_4
+      fill_in :name, with: "Pierce Brosnan"
+      fill_in :approximate_age, with: 7
+      fill_in :sex, with: "Male"
+      fill_in :description, with: "This ragdoll mix is a fluffy and friendly addition to your household"
+
+      click_button "Add this Pet"
+      save_and_open_page
+      new_pet = Pet.last
+
+      expect(current_path).to eq("/shelters/#{@shelter_2.id}/pets")
+      expect(page).to have_css("img[src*='#{new_pet.image}']")
+      expect(page).to have_content(new_pet.name)
+      expect(page).to have_content(new_pet.approximate_age)
+      expect(page).to have_content(new_pet.sex)
     end
   end
 end
