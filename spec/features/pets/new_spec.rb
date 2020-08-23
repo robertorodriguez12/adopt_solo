@@ -58,7 +58,6 @@ RSpec.describe "Pets New page", type: :feature do
       fill_in :description, with: "This ragdoll mix is a fluffy and friendly addition to your household"
 
       click_button "Add this Pet"
-      save_and_open_page
       new_pet = Pet.last
 
       expect(current_path).to eq("/shelters/#{@shelter_2.id}/pets")

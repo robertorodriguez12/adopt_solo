@@ -1,0 +1,17 @@
+<h1> Edit a Pet at shelter: <%= @shelter.name %></h1>
+<%= form_tag("/pets/#{@pet.id}", method: :patch) do %>
+  binding.pry
+  <p>Edit information about the Pet:</p>
+  <%= label_tag "Image Url: " %>
+  <%= text_field_tag :image, @pet.image %>
+  <%= label_tag "Name of Pet: " %>
+  <%= text_field_tag :name, @pet.name %>
+  <%= label_tag "Approximate age: " %>
+  <%= text_field_tag :approximate_age, @pet.approximate_age %>
+  <%= label_tag "Gender: " %>
+  <%= text_field_tag :sex, @pet.sex %>
+  <%= label_tag "Description: " %>
+  <%= text_field_tag :description, @pet.description %>
+
+  <%= submit_tag 'Submit your Edits', class: :button %>
+<% end %>

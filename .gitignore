@@ -28,3 +28,4 @@
 
 # Ignore test-related files
 /coverage
+/coverage/
