@@ -1,4 +1,4 @@
-<h1>Meet <%= @pet.name %></h1>
+<h1>Meet <%= link_to "#{@pet.name}", "/pets/#{@pet.id}", method: :get %></h1>
 <%= image_tag(@pet.image) %>
 <p>LOCATED AT: <%= link_to "#{@pet.shelter.name}", "/shelters/#{@pet.shelter_id}", method: :get %></p>
 <p>Approximate age: <%= @pet.approximate_age %></p>
