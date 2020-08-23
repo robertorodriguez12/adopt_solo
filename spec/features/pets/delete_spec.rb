@@ -55,7 +55,6 @@ RSpec.describe "Pet Delete Action", type: :feature do
 
       expect(page).to have_link('Delete Pet')
       click_link 'Delete Pet'
-      save_and_open_page
       expect(current_path).to eq("/pets")
 
       expect(page).to_not have_content(@pet_1.name)

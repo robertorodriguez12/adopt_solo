@@ -1,5 +1,7 @@
-<h1>Shelters in the Denver Area</h1>
+<h1>Adopt Don't Shop</h1></b>
+<h2>Shelters in the Denver Area</h2></b>
 <% @shelters.each do |shelter| %>
-  <h2><%= shelter.name %></h2>
-<% end %>
+  <p>Name: <%= shelter.name %></p>
+  <%= link_to "Edit Shelter", "/shelters/#{shelter.id}/edit", method: :get %>
+<% end %></b>
 <h4><%= link_to 'New Shelter', '/shelters/new' %></h4>

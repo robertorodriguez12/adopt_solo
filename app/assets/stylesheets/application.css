@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+/* 
+.shelter_index {
+  background-color: gray;
+  text-align: left;
+  color: pink;
+  font-size: 20px;
+} */
