@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_08_23_165422) do
     t.string "sex"
     t.bigint "shelter_id"
     t.string "description"
-    t.string "status"
+    t.boolean "status", default: true
     t.index ["shelter_id"], name: "index_pets_on_shelter_id"
   end
 
@@ -32,10 +32,7 @@ ActiveRecord::Schema.define(version: 2020_08_23_165422) do
     t.string "city"
     t.string "state"
     t.integer "zip"
-    t.bigint "pet_id"
-    t.index ["pet_id"], name: "index_shelters_on_pet_id"
   end
 
   add_foreign_key "pets", "shelters"
-  add_foreign_key "shelters", "pets"
 end

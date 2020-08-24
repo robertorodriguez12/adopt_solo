@@ -27,7 +27,6 @@ RSpec.describe "Shelters Delete Behavior" do
         click_link 'Delete Shelter'
 
         expect(current_path).to eq("/shelters")
-
         expect(page).to_not have_content(@shelter_1.name)
 
         expect(page).to have_content(@shelter_2.name)

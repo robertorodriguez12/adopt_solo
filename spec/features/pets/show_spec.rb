@@ -43,13 +43,13 @@ RSpec.describe "Pets Show page", type: :feature do
 
     it "can see a unique pet with two new attributes: description and status" do
       visit "/pets/#{@pet_1.id}"
-
       expect(page).to have_css("img[src*='#{@pet_1.image}']")
       expect(page).to have_content(@pet_1.name)
       expect(page).to have_content(@pet_1.approximate_age)
       expect(page).to have_content(@pet_1.sex)
       expect(page).to have_content(@pet_1.description)
-      expect(page).to have_content(@pet_1.status)
+      # expect(page).to have_content(@pet_1.status)
+      expect(@pet_1.status).to eq(true)
       expect(page).to have_content(@shelter_1.name)
     end
 
